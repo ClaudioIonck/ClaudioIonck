@@ -9,7 +9,7 @@
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white
 )](https://www.youtube.com/channel/UCcaSSGG2Q60IDbMfPdjW-Vg)
 [![Twitch](https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white
-)](https://www.twitch.tv/europeanplayerr)
+)](https://www.twitch.tv/hakontyr)
 
 ![Claudio GitHub stats](https://github-readme-stats.vercel.app/api?username=ClaudioIonck&show_icons=true&theme=dracula)
 
