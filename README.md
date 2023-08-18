@@ -8,9 +8,8 @@
   <img width="41%" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ClaudioIonck&layout=compact&hide_border=true&title_color=A388FF&text_color=c9d1d9&bg_color=0d1117" />
 </div>
 
-```Graph```
 
-[![ClaudioIonck github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=ClaudioIonck&theme=dracula)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![ClaudioIonck's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=ClaudioIonck&theme=dracula)](https://github.com/ClaudioIonck/github-readme-activity-graph)
 
 
 
