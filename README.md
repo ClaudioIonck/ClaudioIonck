@@ -13,6 +13,7 @@ I'm **Claudio Luiz Defrein Ionck**, a Software Engineering student at **UNIVILLE
 I like turning real-world problems into simple tools people actually use.
 
 - 🛠️ Building **web apps, management dashboards and interactive 3D websites**
+- 🎨 Care about **UI/UX** — clean, intuitive interfaces designed in Figma
 - 📈 Currently leveling up in **JavaScript** and **Java**
 - 🤝 Open to collaborating on web projects and small-business tools
 - ⚡ Fun fact: I automate anything I have to do more than twice
@@ -20,7 +21,7 @@ I like turning real-world problems into simple tools people actually use.
 ## 🧰 Tech stack
 
 <p align="center">
-  <img src="./assets/stack.svg" width="100%" alt="HTML, CSS, JavaScript, Python, Java, PHP, R, Solidity, Bootstrap, MySQL, Firebase, Vercel, Git, GitHub, VS Code, IntelliJ, Figma, Windows" />
+  <img src="./assets/stack.svg" width="100%" alt="HTML, CSS, JavaScript, Python, Java, C#, PHP, R, Solidity, Vue, Node.js, Bootstrap, MySQL, Firebase, Vercel, Figma, UI/UX, Git, GitHub, VS Code, IntelliJ, Windows" />
 </p>
 
 ## 🚀 Featured projects

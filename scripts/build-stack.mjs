@@ -13,20 +13,37 @@ const C = { bg: "#0d1117", tile: "#161b22", line: "#30363d", text: "#e6edf3", mu
 
 const GROUPS = [
   { title: "Languages", items: [
-    ["html5", "HTML"], ["css3", "CSS"], ["javascript", "JavaScript"], ["python", "Python"],
-    ["java", "Java"], ["php", "PHP"], ["r", "R"], ["solidity", "Solidity", "#e6edf3", true],
+    ["html5", "HTML"], ["css3", "CSS"], ["javascript", "JavaScript"], ["python", "Python"], ["java", "Java"],
+    ["csharp", "C#"], ["php", "PHP"], ["r", "R"], ["solidity", "Solidity", "#e6edf3", true],
   ]},
   { title: "Frameworks, data & cloud", items: [
-    ["bootstrap", "Bootstrap"], ["mysql", "MySQL", "#5BA4D9", true], ["firebase", "Firebase"], ["vercel", "Vercel", "#ffffff"],
+    ["vuejs", "Vue"], ["nodejs", "Node.js"], ["bootstrap", "Bootstrap"], ["mysql", "MySQL", "#5BA4D9", true],
+    ["firebase", "Firebase"], ["vercel", "Vercel", "#ffffff"],
+  ]},
+  { title: "Design", items: [
+    ["figma", "Figma"], ["custom:uiux", "UI/UX"],
   ]},
   { title: "Tools", items: [
     ["git", "Git"], ["github", "GitHub", "#ffffff"], ["vscode", "VS Code"], ["intellij", "IntelliJ"],
-    ["figma", "Figma"], ["windows11", "Windows"],
+    ["windows11", "Windows"],
   ]},
 ];
 
+// Ícones desenhados à mão (não existem no Devicon)
+const CUSTOM = {
+  uiux: (x, y, s) => `<svg x="${x}" y="${y}" width="${s}" height="${s}" viewBox="0 0 36 36">
+<rect x="2" y="4" width="28" height="22" rx="4" fill="#1f1640" stroke="#A388FF" stroke-width="2"/>
+<rect x="2" y="4" width="28" height="6" rx="3" fill="#A388FF"/>
+<rect x="6" y="14" width="9" height="8" rx="1.5" fill="#2DD4BF"/>
+<rect x="18" y="14" width="8" height="2.5" rx="1.2" fill="#8b949e"/>
+<rect x="18" y="19" width="6" height="2.5" rx="1.2" fill="#8b949e"/>
+<path d="M21 20 L21 34 L24.6 30.6 L27.4 36 L30 34.8 L27.3 29.5 L32 29.2 Z" fill="#ffffff" stroke="#0d1117" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>`,
+};
+
 let uid = 0;
 function icon(name, x, y, size, color, force) {
+  if (name.startsWith("custom:")) return CUSTOM[name.slice(7)](x, y, size);
   const dir = join(ICONS, name);
   let src;
   for (const v of ["original", "plain"]) {
@@ -46,7 +63,7 @@ function icon(name, x, y, size, color, force) {
 }
 
 // ---------- stack.svg ----------
-const W = 840, PAD = 28, TILE = 86, GAP = 12, PER_ROW = 8;
+const W = 850, PAD = 28, TILE = 78, GAP = 10, PER_ROW = 9;
 let y = PAD, body = "", n = 0;
 for (const g of GROUPS) {
   body += `<text x="${PAD}" y="${y + 14}" font-size="13" font-weight="700" letter-spacing="1.6" fill="${C.accent}">${g.title.toUpperCase().replace(/&/g, "&amp;")}</text>`;
@@ -56,8 +73,8 @@ for (const g of GROUPS) {
     const x = PAD + col * (TILE + GAP), ty = y + row * (TILE + GAP);
     body += `<g>`
       + `<rect x="${x}" y="${ty}" width="${TILE}" height="${TILE}" rx="14" fill="${C.tile}" stroke="${C.line}"/>`
-      + icon(name, x + 25, ty + 14, 36, color, force)
-      + `<text x="${x + TILE / 2}" y="${ty + 72}" font-size="12" text-anchor="middle" fill="${C.muted}">${label}</text></g>`;
+      + icon(name, x + (TILE - 36) / 2, ty + 12, 36, color, force)
+      + `<text x="${x + TILE / 2}" y="${ty + 66}" font-size="11.5" text-anchor="middle" fill="${C.muted}">${label}</text></g>`;
   });
   y += Math.ceil(g.items.length / PER_ROW) * (TILE + GAP) + 14;
 }
