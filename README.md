@@ -1,61 +1,60 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=7336FF&height=140&section=header"/>
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=7336FF&size=35&center=true&vCenter=true&width=1000&lines=Hello,+my+name+is+Claudio+Luiz+Defrein+Ionck;I'm+23+years+old;I+from+Brasil,+SC+Joinville;I+study+Software+Engineering+at+UNIVILLE;Be+Welcome!+:%29)](https://git.io/typing-svg)
-
-
-<div align="center">  
-  <img width="49%" height="195px" src="https://github-readme-stats.vercel.app/api?username=ClaudioIonck&show_icons=true&theme=dracula" /> 
-  <img width="41%" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ClaudioIonck&layout=compact&hide_border=true&title_color=A388FF&text_color=c9d1d9&bg_color=0d1117" />
-</div>
-
-
-[![ClaudioIonck's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=ClaudioIonck&theme=dracula)](https://github.com/ClaudioIonck/github-readme-activity-graph)
-
-
-
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ClaudioIonck&theme=dracula&row=2&no-bg=true&column=3&margin-w=15&margin-h=15" />
+  <img src="./assets/header.svg" width="100%" alt="Claudio Ionck — Software Engineer" />
 </p>
 
-<div align="center">  
-<a href="https://www.instagram.com/claudioionck/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white"</a>
-</div>
+<p align="center">
+  <a href="https://www.instagram.com/claudioionck/"><img src="./assets/btn-instagram.svg" height="36" alt="Instagram" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/claudio-luiz-defrein-ionck-74505a1a3/"><img src="./assets/btn-linkedin.svg" height="36" alt="LinkedIn" /></a>
+</p>
 
-   
-### Main skills:
-![GitHub](https://img.shields.io/badge/-GitHub-0D1117?style=for-the-badge&logo=github&labelColor=0D1117)&nbsp;
-![CSS](https://img.shields.io/badge/-CSS-0D1117?style=for-the-badge&logo=CSS3&logoColor=1572B6&labelColor=0D1117)&nbsp;
-![Html5](https://img.shields.io/badge/-Html5-0D1117?style=for-the-badge&logo=Html5&labelColor=0D1117)&nbsp;
-![Python](https://img.shields.io/badge/-Python-0D1117?style=for-the-badge&logo=Python&logoColor=withe&labelColor=0D1117)&nbsp; 
-![R](https://img.shields.io/badge/-R-0D1117?style=for-the-badge&logo=R&labelColor=0D1117)&nbsp;
-![PHP](https://img.shields.io/badge/-PHP-0D1117?style=for-the-badge&logo=PHP&labelColor=0D1117)&nbsp;
+## 👋 About me
 
-### Tools:
-![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-0D1117?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC&labelColor=0D1117)&nbsp;
-<!-- ![Git](https://img.shields.io/badge/-Git-0D1117?style=for-the-badge&logo=git&labelColor=0D1117)&nbsp; -->
-![GitHub](https://img.shields.io/badge/-GitHub-0D1117?style=for-the-badge&logo=github&labelColor=0D1117)&nbsp;
-![Windows](https://img.shields.io/badge/-Windows-0D1117?style=for-the-badge&logo=windows&labelColor=0D1117)&nbsp;
-![microsoft-office](https://img.shields.io/badge/-microsoft_office-0D1117?style=for-the-badge&logo=microsoft-office&labelColor=0D1117)&nbsp;
-![IntelliJ](https://img.shields.io/badge/-IntelliJ-0D1117?style=for-the-badge&logo=IntelliJ&logoColor=007ACC&labelColor=0D1117)&nbsp;
+I'm **Claudio Luiz Defrein Ionck**, a Software Engineering student at **UNIVILLE** from Joinville, SC — Brasil.
+I like turning real-world problems into simple tools people actually use.
 
-### Other Knowledge:
-![Solidity](https://img.shields.io/badge/-Solidity-0D1117?style=for-the-badge&logo=Solidity&logoColor=1572B6&labelColor=0D1117)&nbsp;
-![Boostrap](https://img.shields.io/badge/-boostrap-0D1117?style=for-the-badge&logo=bootstrap&labelColor=0D1117)&nbsp;
-![MySQL](https://img.shields.io/badge/-mysql-0D1117?style=for-the-badge&logo=mysql&labelColor=0D1117)&nbsp;
-![Figma](https://img.shields.io/badge/-figma-0D1117?style=for-the-badge&logo=figma&labelColor=0D1117)&nbsp;
-  
-### Studying in this moment:
-![JavaScript](https://img.shields.io/badge/-JavaScript-0D1117?style=for-the-badge&logo=javascript&labelColor=0D1117&textColor=0D1117)&nbsp;
-![Java](https://img.shields.io/badge/-Java-0D1117?style=for-the-badge&logo=Java&labelColor=0D1117&textColor=0D1117)&nbsp;
+- 🛠️ Building **web apps, management dashboards and interactive 3D websites**
+- 📈 Currently leveling up in **JavaScript** and **Java**
+- 🤝 Open to collaborating on web projects and small-business tools
+- ⚡ Fun fact: I automate anything I have to do more than twice
 
+## 🧰 Tech stack
 
+<p align="center">
+  <img src="./assets/stack.svg" width="100%" alt="HTML, CSS, JavaScript, Python, Java, PHP, R, Solidity, Bootstrap, MySQL, Firebase, Vercel, Git, GitHub, VS Code, IntelliJ, Figma, Windows" />
+</p>
 
-</div>
+## 🚀 Featured projects
 
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/ClaudioIonck/mesa-de-analise">🎞️ Mesa de Análise</a></h3>
+      Frame-by-frame video analysis tool that runs right in the browser — no install needed.
+      <br/><br/>
+      <code>Web app</code> <code>GitHub Pages</code>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/ClaudioIonck/panificadora-back-defrein">🥖 Panificadora BACK &amp; DEFREIN</a></h3>
+      Online ordering site for a family bakery: weekly order cycle, admin panel and delivery route.
+      <br/><br/>
+      <code>Web app</code> <code>WhatsApp orders</code>
+    </td>
+  </tr>
+</table>
 
-<div align="center">
-<br><p align="centre"><b>Visitors Count</b></p>  
-<p align="center"><img align="center" src="https://profile-counter.glitch.me/{ClaudioIonck}/count.svg" /></p> 
-<br></div>
+## 📊 GitHub stats
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=7336FF&height=140&section=footer"/>
+<p align="center">
+  <img src="./assets/stats.svg" width="49%" alt="GitHub stats" />
+  <img src="./assets/langs.svg" width="49%" alt="Most used languages" />
+</p>
+
+<p align="center">
+  <img src="./assets/snake.svg" width="100%" alt="Contribution snake" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=ClaudioIonck&label=profile%20views&color=7336FF&style=flat-square" alt="Profile views" />
+</p>
+
+<!-- Cards updated automatically by .github/workflows/profile.yml — no third-party card services. -->

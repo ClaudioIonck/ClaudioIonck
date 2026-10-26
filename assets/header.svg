@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0716"/>
+      <stop offset="1" stop-color="#120a26"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7336FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7336FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#C9B6FF"/>
+      <stop offset="1" stop-color="#8F63FF"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5A22E0"/>
+      <stop offset="1" stop-color="#8F63FF"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="320" rx="18"/></clipPath>
+    <clipPath id="type1"><rect x="0" y="0" height="60" width="0">
+      <animate attributeName="width" values="0;249;249;0;0" keyTimes="0;0.12;0.27;0.32;1" dur="12s" repeatCount="indefinite" calcMode="linear"/>
+    </rect></clipPath>
+    <clipPath id="type2"><rect x="0" y="0" height="60" width="0">
+      <animate attributeName="width" values="0;0;508;508;0;0" keyTimes="0;0.333;0.453;0.6;0.653;1" dur="12s" repeatCount="indefinite"/>
+    </rect></clipPath>
+    <clipPath id="type3"><rect x="0" y="0" height="60" width="0">
+      <animate attributeName="width" values="0;0;321;321;0;0" keyTimes="0;0.666;0.786;0.933;0.986;1" dur="12s" repeatCount="indefinite"/>
+    </rect></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+
+    <circle cx="980" cy="70" r="260" fill="url(#glowA)">
+      <animate attributeName="cx" values="980;920;980" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="300" r="220" fill="url(#glowB)">
+      <animate attributeName="cy" values="300;260;300" dur="11s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- code glyph -->
+    <g transform="translate(905 92)" fill="none" stroke="#A388FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+      <path d="M40 20 L0 60 L40 100"/>
+      <path d="M160 20 L200 60 L160 100"/>
+      <path d="M118 6 L82 114" stroke="#2DD4BF"/>
+    </g>
+
+    <text x="80" y="92" font-size="20" fill="#A388FF" letter-spacing="4" font-weight="600">HELLO, WORLD — I'M</text>
+    <text x="78" y="160" font-size="66" font-weight="800" fill="url(#name)" letter-spacing="-1">Claudio Ionck</text>
+
+    <g transform="translate(80 178)">
+      <text x="0" y="24" font-size="15" fill="#8b949e" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace">~/claudio $</text>
+      <g transform="translate(108 0)" font-size="24" fill="#E6EDF3" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace">
+        <g clip-path="url(#type1)"><text x="0" y="26" textLength="244.8" lengthAdjust="spacing">Software Engineer</text></g>
+        <g clip-path="url(#type2)"><text x="0" y="26" textLength="504.0" lengthAdjust="spacing">Web apps, dashboards &amp; 3D on the web</text></g>
+        <g clip-path="url(#type3)"><text x="0" y="26" textLength="316.8" lengthAdjust="spacing">Joinville, SC — Brasil</text></g>
+        <rect x="0" y="6" width="3" height="26" fill="#2DD4BF">
+          <animate attributeName="x" dur="12s" repeatCount="indefinite" keyTimes="0;0.12;0.27;0.32;0.333;0.453;0.6;0.653;0.666;0.786;0.933;0.986;1" values="0;249;249;0;0;508;508;0;0;321;321;0;0"/>
+          <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" calcMode="discrete"/>
+        </rect>
+      </g>
+    </g>
+
+    <path d="M0 270 C 200 240, 380 300, 600 280 S 1000 245, 1200 275 L1200 320 L0 320 Z" fill="url(#wave)" opacity="0.9">
+      <animate attributeName="d" dur="10s" repeatCount="indefinite"
+        values="M0 270 C 200 240, 380 300, 600 280 S 1000 245, 1200 275 L1200 320 L0 320 Z;
+                M0 280 C 220 300, 400 250, 600 270 S 980 300, 1200 265 L1200 320 L0 320 Z;
+                M0 270 C 200 240, 380 300, 600 280 S 1000 245, 1200 275 L1200 320 L0 320 Z"/>
+    </path>
+    <path d="M0 292 C 260 270, 460 316, 700 296 S 1050 280, 1200 300 L1200 320 L0 320 Z" fill="#7336FF" opacity="0.55"/>
+  </g>
+</svg>
