@@ -11,32 +11,63 @@ const FONT = "'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, s
 const C = { bg: "#0d1117", line: "#30363d", text: "#e6edf3", muted: "#8b949e", accent: "#A388FF", accent2: "#2DD4BF" };
 const IGNORE_LANGS = new Set((process.env.IGNORE_LANGS || "").split(",").filter(Boolean));
 
-const QUERY = `query($login:String!){ user(login:$login){
-  name createdAt followers{totalCount}
+const CONTRIB_QUERY = `query($login:String!){ user(login:$login){
   contributionsCollection{
     totalCommitContributions restrictedContributionsCount
     totalPullRequestContributions totalIssueContributions
     contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount date } } }
   }
-  repositories(ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC, first:100){
-    totalCount
-    nodes{ stargazerCount languages(first:10, orderBy:{field:SIZE, direction:DESC}){ edges{ size node{ name color } } } }
-  }
 }}`;
+
+// Mensagens "::warning::" / "::error::" aparecem como anotações na aba Actions.
+const warn = m => console.log(`::warning::${String(m).replace(/\n/g, " ").slice(0, 900)}`);
 
 async function load() {
   if (process.argv.includes("--mock")) return mock();
   const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
   if (!token) throw new Error("defina GH_TOKEN");
-  const r = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: { Authorization: `bearer ${token}`, "Content-Type": "application/json", "User-Agent": USER },
-    body: JSON.stringify({ query: QUERY, variables: { login: USER } }),
-  });
-  const j = await r.json();
-  if (!r.ok || j.errors) throw new Error(JSON.stringify(j.errors ?? j));
-  return j.data.user;
+  const headers = { Authorization: `Bearer ${token}`, "User-Agent": USER, Accept: "application/vnd.github+json" };
+
+  async function rest(path) {
+    const r = await fetch(`https://api.github.com${path}`, { headers });
+    if (!r.ok) throw new Error(`GET ${path} -> ${r.status} ${(await r.text()).slice(0, 300)}`);
+    return r.json();
+  }
+
+  // Repositórios e linguagens via REST (sempre disponível com o GITHUB_TOKEN para dados públicos)
+  const repos = (await rest(`/users/${USER}/repos?type=owner&per_page=100`)).filter(r => !r.fork);
+  const nodes = [];
+  for (const r of repos) {
+    let langs = {};
+    try { langs = await rest(`/repos/${r.full_name}/languages`); } catch (e) { warn(e.message); }
+    nodes.push({
+      stargazerCount: r.stargazers_count,
+      languages: { edges: Object.entries(langs).map(([name, size]) => ({ size, node: { name, color: LANG_COLORS[name] } })) },
+    });
+  }
+
+  // Contribuições via GraphQL; se falhar, os cards saem sem esses números em vez de quebrar
+  let cc = null;
+  try {
+    const r = await fetch("https://api.github.com/graphql", {
+      method: "POST", headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({ query: CONTRIB_QUERY, variables: { login: USER } }),
+    });
+    const j = await r.json();
+    if (j.errors) warn(`GraphQL: ${JSON.stringify(j.errors)}`);
+    cc = j.data?.user?.contributionsCollection ?? null;
+  } catch (e) { warn(`GraphQL: ${e.message}`); }
+
+  return { contributionsCollection: cc, repositories: { totalCount: repos.length, nodes } };
 }
+
+const LANG_COLORS = {
+  JavaScript: "#f1e05a", TypeScript: "#3178c6", HTML: "#e34c26", CSS: "#663399", Python: "#3572A5",
+  Java: "#b07219", PHP: "#4F5D95", R: "#198CE7", Solidity: "#AA6746", Shell: "#89e051", "C#": "#178600",
+  C: "#555555", "C++": "#f34b7d", Go: "#00ADD8", Rust: "#dea584", Kotlin: "#A97BFF", Dart: "#00B4AB",
+  Vue: "#41b883", SCSS: "#c6538c", Batchfile: "#C1F12E", PowerShell: "#012456", "Jupyter Notebook": "#DA5B0B",
+  GLSL: "#5686a5", Dockerfile: "#384d54", Ruby: "#701516", Swift: "#F05138",
+};
 
 function streaks(weeks) {
   const days = weeks.flatMap(w => w.contributionDays);
@@ -50,7 +81,7 @@ function streaks(weeks) {
 }
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
-const fmt = n => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k" : String(n);
+const fmt = n => Number.isNaN(n) ? "—" : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k" : String(n);
 
 const ICON = {
   star: "M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z",
@@ -72,7 +103,10 @@ ${body}
 }
 
 function statsSvg(u) {
-  const cc = u.contributionsCollection;
+  const cc = u.contributionsCollection ?? {
+    totalCommitContributions: NaN, restrictedContributionsCount: 0, totalPullRequestContributions: NaN,
+    totalIssueContributions: NaN, contributionCalendar: { totalContributions: NaN, weeks: [] },
+  };
   const stars = u.repositories.nodes.reduce((a, r) => a + r.stargazerCount, 0);
   const { current, longest } = streaks(cc.contributionCalendar.weeks);
   const rows = [
@@ -159,7 +193,9 @@ function mock() {
   };
 }
 
-const u = await load();
+let u;
+try { u = await load(); }
+catch (e) { console.log(`::error::${String(e.message).replace(/\n/g, " ").slice(0, 900)}`); process.exit(1); }
 mkdirSync(OUT, { recursive: true });
 writeFileSync(join(OUT, "stats.svg"), statsSvg(u));
 writeFileSync(join(OUT, "langs.svg"), langsSvg(u));
