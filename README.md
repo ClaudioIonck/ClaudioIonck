@@ -9,12 +9,12 @@
 
 ## 👋 About me
 
-I'm **Claudio Luiz Defrein Ionck**, a Software Engineering student at **UNIVILLE** from Joinville, SC — Brasil.
+I'm **Claudio Luiz Defrein Ionck**, a Software Engineer from Joinville, SC — Brasil, graduated in Software Engineering at **UNIVILLE**.
 I like turning real-world problems into simple tools people actually use.
 
 - 🛠️ Building **web apps, management dashboards and interactive 3D websites**
 - 🎨 Care about **UI/UX** — clean, intuitive interfaces designed in Figma
-- 📈 Currently leveling up in **JavaScript** and **Java**
+- 📈 Always leveling up — currently deeper into **Vue**, **Node.js** and **C#**
 - 🤝 Open to collaborating on web projects and small-business tools
 - ⚡ Fun fact: I automate anything I have to do more than twice
 
