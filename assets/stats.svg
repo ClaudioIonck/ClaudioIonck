@@ -4,7 +4,7 @@
 <defs><linearGradient id="g" gradientUnits="userSpaceOnUse" x1="348" y1="64" x2="436" y2="152"><stop offset="0" stop-color="#A388FF"/><stop offset="1" stop-color="#2DD4BF"/></linearGradient></defs><g>
 <svg x="24" y="59" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A388FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zM1 12h6m10 0h6"/></svg>
 <text x="48" y="72" font-size="14" fill="#8b949e">Commits (last year)</text>
-<text x="262" y="72" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="end">3</text></g>
+<text x="262" y="72" font-size="14" font-weight="700" fill="#e6edf3" text-anchor="end">2</text></g>
 <g>
 <svg x="24" y="84" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A388FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12m0 0a3 3 0 100 6 3 3 0 000-6zM18 21V9a3 3 0 00-3-3h-4m0 0l3-3m-3 3l3 3"/></svg>
 <text x="48" y="97" font-size="14" fill="#8b949e">Pull requests</text>
@@ -24,7 +24,7 @@
 <line x1="290" y1="56" x2="290" y2="182" stroke="#30363d"/>
 <g>
 <circle cx="392" cy="108" r="44" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round" />
-<text x="392" y="113" font-size="26" font-weight="800" fill="#e6edf3" text-anchor="middle">5</text>
+<text x="392" y="113" font-size="26" font-weight="800" fill="#e6edf3" text-anchor="middle">4</text>
 <text x="392" y="174" font-size="12" fill="#8b949e" text-anchor="middle">contributions · last year</text>
 </g>
 <g>
